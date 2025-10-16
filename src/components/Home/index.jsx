@@ -65,7 +65,7 @@ const categories = [
               View Gallery
             </a>
             <a
-              href="/custom-orders"
+              href="/cart"
               className="bg-white hover:bg-orange-100 border border-orange-600 text-orange-600 
                px-4 py-2 text-sm 
                md:px-6 md:py-3 md:text-base 

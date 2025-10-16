@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Gallery from "./components/Gallery";
+import CartPage from './cart/CartPage';
+import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen flex flex-col bg-blue-100  text-center p-4 md:p-8 rounded-lg shadow-md">
+      <div className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/categories/:categoryName" element={<Gallery />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="*" element={<h1 className="text-center p-10">404 - Page Not Found</h1>} />
+        </Routes>
+      </div>
+      <Footer />
     </div>
   );
 }
